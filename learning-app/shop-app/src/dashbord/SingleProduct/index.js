@@ -1,14 +1,25 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const SingleProduct = () => {
-  const { id } = useParams();
+
+  // const { id } = useParams();
+
   const [singleProduct, setSingleProduct] = useState();
   const [similarProduct, setSimilarProduct] = useState();
 
+  // const location = useLocation();
+  // const prId = new URLSearchParams(location.search);
+  // const productId = prId.get('id');
+  // console.log('location', productId);
+
+  const [location, setLocation] = useSearchParams();
+  const productId = location.get('id');
+  console.log('location', productId);
+
   async function getProductData() {
-    axios.get(`https://fakestoreapi.com/products/${id}`).then(function (res) {
+    axios.get(`https://fakestoreapi.com/products/${productId}`).then(function (res) {
       //   console.log("main-data", res);
       if ((res.status = 200)) {
         setSingleProduct(res.data);
@@ -17,7 +28,7 @@ const SingleProduct = () => {
   }
 
   async function getSimilarProductData() {
-    console.log("categoryName", singleProduct?.category);
+    // console.log("categoryName", singleProduct?.category);
     axios
       .get(
         `https://fakestoreapi.com/products/category/${singleProduct?.category}`

@@ -5,6 +5,12 @@
   justify-content: center;
   align-items: center;
 }
+
 .product-img img {
   max-height: 200px;
+}
+
+.custom-select.selectWidth {
+  width: 100%;
+  max-width: 150px;
 }

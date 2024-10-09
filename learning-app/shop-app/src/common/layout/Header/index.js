@@ -104,7 +104,7 @@ const Header = () => {
                 </div>
                 <div className="col-lg-2 col-12">
                   <div className="py-3 ml-auto text-right">
-                    {console.log("useAuth:", user)}
+                    {/* {console.log("useAuth:", user)} */}
                     {user ? (
                       <button
                         type="button"

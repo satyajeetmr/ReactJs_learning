@@ -92,7 +92,7 @@ const Login = () => {
   // console.log("err--", errors);
 
   useEffect(() => {
-    console.log("afterLoignUesr", user);
+    // console.log("afterLoignUesr", user);
     if (user) {
       navigate("/");
     }
